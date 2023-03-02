@@ -1,7 +1,11 @@
 <script>
     import {store} from '../store'
+    import ProjectComponent from './mainComponents/ProjectComponent.vue'
     export default {
         name:'AppMain',
+        components:{
+            ProjectComponent,
+        },  
         data() {
             return {
                 store,
@@ -26,18 +30,7 @@
     <main class="container">
         <div v-if="store.isLoaded && getDataAfter(250)" class="row g-3 py-3">
             <div v-for="project in store.data" class="col-12 col-sm-6 col-lg-4">
-                <div class="card p-2 h-100 d-flex flex-column justify-content-between">
-                    <div class="top">
-                        <h4>{{ project.title }}</h4>
-                        <div class="text-capitalize {{(project.type.id == 1)?'text-success':((project.type.id == 2)?'text-danger':'text-primary')}}">{{ project.type.name }}</div>
-                        <pre class="text-secondary">{{ project.user.name + ' ' + project.user.lastname }}</pre>
-                        <p>{{ project.content }}</p>
-                    </div>
-                    <div class="bottom">
-                        <div>{{ project.start_date.slice(0, 10) }}</div>
-                        <div class="text-success" :class="project.end_date ? '' : 'text-danger'">{{ project.end_date ? project.end_date.slice(0, 10): 'work in progress'  }}</div>
-                    </div>
-                </div>
+                <ProjectComponent :project="project"/>
             </div>
         </div>
         <div v-else class="loading-container d-flex justify-content-center align-items-center align-content-center">

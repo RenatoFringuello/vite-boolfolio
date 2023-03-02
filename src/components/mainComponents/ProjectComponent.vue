@@ -1,0 +1,32 @@
+<script>
+    export default {
+        name:'ProjectComponent',
+        props:{
+            'project':Object
+        },
+        data() {
+            return {
+                test:'hello world'
+            }
+        },
+    }
+</script>
+
+<template>
+    <div class="card p-2 h-100 d-flex flex-column justify-content-between">
+        <div class="top">
+            <h4>{{ project.title }}</h4>
+            <div class="text-capitalize {{(project.type.id == 1)?'text-success':((project.type.id == 2)?'text-danger':'text-primary')}}">{{ project.type.name }}</div>
+            <pre class="text-secondary">{{ project.user.name + ' ' + project.user.lastname }}</pre>
+            <p>{{ project.content }}</p>
+        </div>
+        <div class="bottom">
+            <div>{{ project.start_date.slice(0, 10) }}</div>
+            <div class="text-success" :class="project.end_date ? '' : 'text-danger'">{{ project.end_date ? project.end_date.slice(0, 10): 'work in progress'  }}</div>
+        </div>
+    </div>
+</template>
+
+<style scoped lang="scss">
+    
+</style>
