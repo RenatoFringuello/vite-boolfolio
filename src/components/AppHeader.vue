@@ -9,8 +9,8 @@
 </script>
 
 <template lang="">
-    <header>
-        <nav class="container d-flex justify-content-between align-items-center">
+    <header class="bg-danger">
+        <nav class="container py-4 d-flex justify-content-between align-items-center">
             <div class="logo">Logo</div>
             <ul class="d-flex mb-0 list-unstyled">
                 <li class="ms-2">link</li>
