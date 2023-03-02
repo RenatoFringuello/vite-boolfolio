@@ -1,0 +1,12 @@
+$main-text-color : #0c32bd;
+$second-text-color : #2f9ccf;
+
+// loader
+@keyframes spinLeft {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
+}
+@keyframes spinRight {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+}
