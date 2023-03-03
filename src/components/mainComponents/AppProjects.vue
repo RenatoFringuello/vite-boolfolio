@@ -1,6 +1,6 @@
 <script>
-    import {store} from '../store'
-    import ProjectComponent from './mainComponents/ProjectComponent.vue'
+    import {store} from '../../store'
+    import ProjectComponent from './ProjectComponent.vue'
     export default {
         name:'AppMain',
         components:{
@@ -29,28 +29,26 @@
 </script>
 
 <template>
-    <main class="container">
-        <div v-if="store.isLoaded && getDataAfter(250)" class="row g-3 py-3">
-            <div v-for="project in store.data" class="col-12 col-sm-6 col-lg-4">
-                <ProjectComponent :project="project"/>
-            </div>
-            <div class="links d-flex justify-content-between">
-                <button class="btn btn-primary" :class="(!store.isPrevAvailable)?'btn-secondary':''" 
-                        :disabled="(!store.isPrevAvailable)" @click="store.getPrevPage()">Prev</button>
-                <button class="btn btn-primary" :class="(!store.isNextAvailable)?'btn-secondary':''" 
-                        :disabled="(!store.isNextAvailable)" @click="store.getNextPage()">Next</button>
-            </div>
+    <div v-if="store.isLoaded && getDataAfter(250)" class="row g-3 py-3">
+        <div v-for="project in store.data" class="col-12 col-sm-6 col-lg-4">
+            <ProjectComponent :project="project"/>
         </div>
-        <div v-else class="loading-container d-flex justify-content-center align-items-center align-content-center">
-            <div class="m-auto">
-                <div class="loader"></div>
-            </div>
+        <div class="links d-flex justify-content-between">
+            <button class="btn btn-primary" :class="(!store.isPrevAvailable)?'btn-secondary':''" 
+                    :disabled="(!store.isPrevAvailable)" @click="store.getPrevPage()">Prev</button>
+            <button class="btn btn-primary" :class="(!store.isNextAvailable)?'btn-secondary':''" 
+                    :disabled="(!store.isNextAvailable)" @click="store.getNextPage()">Next</button>
         </div>
-    </main>
+    </div>
+    <div v-else class="loading-container d-flex justify-content-center align-items-center align-content-center">
+        <div class="m-auto">
+            <div class="loader"></div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-    @use '../style/partials/variables' as *;
+    @use '../../style/partials/variables' as *;
 
     .loading-container{
         height: calc(100vh - 80px);
