@@ -9,6 +9,8 @@
         data() {
             return {
                 store,
+                prevLink : store.prevPageLink,
+                nextLink : store.nextPageLink,
                 isAvailable : false,
             }
         },
@@ -18,7 +20,7 @@
                     this.isAvailable = true;
                 },n);
                 return this.isAvailable;
-            }
+            },
         },
         created(){
             store.getData('/projects');
@@ -31,6 +33,12 @@
         <div v-if="store.isLoaded && getDataAfter(250)" class="row g-3 py-3">
             <div v-for="project in store.data" class="col-12 col-sm-6 col-lg-4">
                 <ProjectComponent :project="project"/>
+            </div>
+            <div class="links d-flex justify-content-between">
+                <button class="btn btn-primary" :class="(!store.isPrevAvailable)?'btn-secondary':''" 
+                        :disabled="(!store.isPrevAvailable)" @click="store.getPrevPage()">Prev</button>
+                <button class="btn btn-primary" :class="(!store.isNextAvailable)?'btn-secondary':''" 
+                        :disabled="(!store.isNextAvailable)" @click="store.getNextPage()">Next</button>
             </div>
         </div>
         <div v-else class="loading-container d-flex justify-content-center align-items-center align-content-center">
