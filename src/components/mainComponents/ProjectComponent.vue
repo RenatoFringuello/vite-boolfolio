@@ -13,7 +13,7 @@
 </script>
 
 <template>
-    <div class="card p-2 h-100 d-flex flex-column justify-content-between">
+    <div class="card p-3 h-100 d-flex flex-column justify-content-between">
         <div class="top">
             <h4>{{ project.title }}</h4>
             <div class="text-capitalize {{(project.type.id == 1)?'text-success':((project.type.id == 2)?'text-danger':'text-primary')}}">{{ project.type.name }}</div>
@@ -28,5 +28,11 @@
 </template>
 
 <style scoped lang="scss">
-    
+    .card{
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        &:hover{
+            box-shadow: 0 4px 10px 2px #0002 ;
+        } 
+    }
 </style>
