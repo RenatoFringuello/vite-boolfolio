@@ -1,3 +1,7 @@
 @use 'node_modules/bootstrap/scss/bootstrap' as *;
-@use './partials/bootstrapMissings' as *;
 @use './partials/variables' as *;
+@use './partials/bootstrapMissings' as *;
+
+.main-bg-gradient{
+    background: -webkit-linear-gradient(45deg,$main-text-color, $second-text-color);
+}
