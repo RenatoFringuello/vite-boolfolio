@@ -1,1 +1,3 @@
 @use 'node_modules/bootstrap/scss/bootstrap' as *;
+@use './partials/bootstrapMissings' as *;
+@use './partials/variables' as *;
