@@ -1,11 +1,16 @@
 <script>
+  import HomeJumbotron from '../components/mainComponents/home/HomeJumbotron.vue';
+  
   export default{
-    name:'AppHome',
-  }
+    name: "AppHome",
+    components: { 
+      HomeJumbotron,
+    }
+}
 </script>
 
 <template>
-    <h1 class="p-3 pb-0 m-0 fw-bold">Home</h1>
+    <HomeJumbotron class="mt-3" />
 </template>
 
 <style lang="scss">
