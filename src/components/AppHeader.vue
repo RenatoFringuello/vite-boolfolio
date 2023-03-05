@@ -1,15 +1,16 @@
 <script>
+    import {store} from '../store';
     export default {
         data() {
             return {
-                
+                store,
             }
         },
     }
 </script>
 
 <template lang="">
-    <header class="text-white">
+    <header class="text-white main-bg-gradient">
         <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary">
             <div class="container">
                 <router-link :to="{name:'home'}" class="navbar-brand">Logo</router-link>
@@ -20,13 +21,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <router-link :to="{name:'home'}" class="nav-link active" aria-current="page">Home</router-link>
+                                <router-link @click="store.isPageAvailable = false" :to="{name:'home'}" class="nav-link active" aria-current="page">Home</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link :to="{name:'projects'}" class="nav-link active" aria-current="page">Projects</router-link>
+                                <router-link @click="store.isPageAvailable = false" :to="{name:'projects'}" class="nav-link active" aria-current="page">Projects</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link :to="{name:'about-me'}" class="nav-link active" aria-current="page">About Me</router-link>
+                                <router-link @click="store.isPageAvailable = false" :to="{name:'about-me'}" class="nav-link active" aria-current="page">About Me</router-link>
                             </li>
                             
                             <li class="nav-item dropdown">
@@ -49,10 +50,7 @@
 </template>
 
 <style lang="scss" scoped>
-    @use '../style/partials/variables' as *;
-
     header{
-        background: -webkit-linear-gradient(45deg,$main-text-color, $second-text-color);
 
         a{
             text-decoration: none;
