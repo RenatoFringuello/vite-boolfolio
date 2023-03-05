@@ -49,7 +49,7 @@
 </template>
 
 <style scoped lang="scss">
-    @use '../../style/partials/variables' as *;
+    @use '../../../style/partials/variables' as *;
     .border-card{
         padding:4px;
         &.index:hover{
