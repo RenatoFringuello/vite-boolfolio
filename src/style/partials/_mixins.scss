@@ -1,0 +1,25 @@
+//curved-corners
+/**
+    to the element which have to be a corner give
+    the class 'curved-corner'
+    one of those 4 class down below in the ifs (default is 'top-left')
+
+    in the scss scoped of the component call the $direction class you picked
+    and in its ::before @include this mixin
+*/
+@mixin curved-corner($direction:'top-left', $borderRadius:1rem, $color:white){
+    border-radius: $borderRadius;
+
+    @if $direction == 'top-left' {
+        box-shadow: -50px -50px 0 0 $color;
+    }
+    @if $direction == 'top-right' {
+        box-shadow: 50px -50px 0 0 $color;
+    }
+    @if $direction == 'bottom-left' {
+        box-shadow: -50px 50px 0 0 $color;
+    }
+    @if $direction == 'bottom-right' {
+        box-shadow: 50px 50px 0 0 $color;
+    }
+}

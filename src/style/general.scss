@@ -1,7 +1,30 @@
 @use 'node_modules/bootstrap/scss/bootstrap' as *;
 @use './partials/variables' as *;
 @use './partials/bootstrapMissings' as *;
+@use './partials/mixins' as *;
 
 .main-bg-gradient{
     background: -webkit-linear-gradient(45deg,$main-text-color, $second-text-color);
+}
+
+//curved-corner
+.curved-corner{
+    width:  100px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+}
+.curved-corner::before{
+    content: "";
+    display: block;
+    width:  100%;
+    height: 100%;
+    position: absolute;
+}
+
+//activelink & projects cards
+.active,
+.invert-color{
+    filter: hue-rotate(180deg);
+    -webkit-filter: hue-rotate(180deg);
 }
