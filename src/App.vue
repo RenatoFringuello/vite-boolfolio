@@ -20,8 +20,8 @@
 
 <template>
   <AppHeader/>
-  <main class="container">
-    <div v-if="store.getDataAfter(500)" class="row g-3 py-3">
+  <main class="container-fluid px-4">
+    <div v-if="store.getDataAfter(500)" class="row g-3">
       <router-view></router-view>
     </div>
     <!-- loader -->
