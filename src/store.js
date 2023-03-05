@@ -2,6 +2,17 @@ import { reactive } from "vue"
 import axios from 'axios'
 
 export const store = reactive({
+   //page - loader
+   isPageAvailable : false,
+   getDataAfter(n){
+      setTimeout(()=>{
+        this.isPageAvailable = true;
+      },n);
+      return this.isPageAvailable;
+    },
+
+
+   //axios
    apiUrl : 'http://localhost:8000/api',
    dataRaw:[],
    data:[],
