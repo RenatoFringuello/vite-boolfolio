@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <h1>Home</h1>
+    <h1 class="p-3 pb-0 m-0 fw-bold">Home</h1>
 </template>
 
 <style lang="scss">
