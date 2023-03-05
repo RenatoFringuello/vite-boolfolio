@@ -1,4 +1,6 @@
 <script>
+  import {store} from './store';
+
   import AppHeader from './components/AppHeader.vue';
 
   export default{
@@ -7,16 +9,11 @@
     },
     data() {
       return {
-        isPageAvailable : false,
+        store,
       }
     },
     methods:{
-        getDataAfter(n){
-            setTimeout(()=>{
-                this.isPageAvailable = true;
-            },n);
-            return this.isPageAvailable;
-        },
+      
     }
   }
 </script>
@@ -24,13 +21,14 @@
 <template>
   <AppHeader/>
   <main class="container">
-    <div v-if="getDataAfter(500)" class="row g-3 py-3">
+    <div v-if="store.getDataAfter(500)" class="row g-3 py-3">
       <router-view></router-view>
     </div>
+    <!-- loader -->
     <div v-else class="loading-container d-flex justify-content-center align-items-center align-content-center">
-        <div class="m-auto">
-            <div class="loader"></div>
-        </div>
+      <div class="m-auto">
+        <div class="loader"></div>
+      </div>
     </div>
   </main>
 </template>
