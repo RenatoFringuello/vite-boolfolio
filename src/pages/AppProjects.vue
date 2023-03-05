@@ -1,5 +1,5 @@
 <script>
-  import ProjectsList from '../components/mainComponents/ProjectsList.vue';
+  import ProjectsList from '../components/mainComponents/projects/ProjectsList.vue';
   export default{
     name:'AppProject',
     components:{

@@ -1,6 +1,6 @@
 <script>
   import {store} from '../store'
-  import ProjectComponent from '../components/mainComponents/ProjectComponent.vue';
+  import ProjectComponent from '../components/mainComponents/projects/ProjectComponent.vue';
 
   export default{
     name: "AppProjectSlug",
