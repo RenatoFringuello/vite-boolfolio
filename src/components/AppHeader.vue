@@ -33,7 +33,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid px-4">
-                <router-link :to="{name:'home'}" class="navbar-brand">Logo</router-link>
+                <router-link :to="{name:'home'}" class="fs-3 logo">Logo</router-link>
                 <div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -69,14 +69,17 @@
     header{
         a{
             text-decoration: none;
+            transition: all .21s ease-in-out;
             color:$main-text-color;
-            opacity: 80% !important;
+            opacity: 65% !important;
+            padding: .25rem;
+            border-radius: 5px;
             border-bottom: 2px solid #0000;
-            &.active{
+            border-right:    2px solid #0000;
+
+            &.active,
+            &:not(.logo):hover{
                 opacity: 100% !important;
-            }
-            &:hover{
-                opacity: 65% !important;
                 border-color:$main-text-color;
             }
         }

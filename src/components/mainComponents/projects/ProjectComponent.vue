@@ -34,7 +34,7 @@
             </div>
             <div class="right">
                 <div class="top">
-                    <h4 class="main-bg-gradient d-inline-block">{{ project.title }}</h4>
+                    <h4 class="main-bg-gradient text-background d-inline-block">{{ project.title }}</h4>
                     <div class="text-capitalize" :class="(project.type.id == 1)?'text-success':((project.type.id == 2)?'text-danger':'text-primary')">{{ project.type.name }}</div>
                     <pre class="text-secondary">{{ project.user.name + ' ' + project.user.lastname }}</pre>
                     <p>{{ project.content }}</p>
@@ -68,13 +68,6 @@
 
             img{
                 height: 70vh;
-            }
-
-            h4{
-                //main-bg-gradient
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
         }
     }
