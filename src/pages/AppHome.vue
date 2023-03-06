@@ -10,7 +10,7 @@
 </script>
 
 <template>
-    <HomeJumbotron class="mt-3" />
+  <HomeJumbotron class="mt-3" />
 </template>
 
 <style lang="scss">
