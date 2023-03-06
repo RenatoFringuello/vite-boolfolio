@@ -7,6 +7,13 @@
     background: -webkit-linear-gradient(45deg,$main-text-color, $second-text-color);
 }
 
+//text-background
+.text-background{
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: #0000;
+}
+
 //curved-corner
 .curved-corner{
     width:  100px;
